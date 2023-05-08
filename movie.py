@@ -98,7 +98,7 @@ if title:
 				st.image(base_url+movie[5]['poster_path'])
 				st.write(f"[{movie[5]['original_title']}]({link5})")  
 		except:
-			st.error("Similar Movies Not Found !!!")
+			st.success("Similar Movies Likes !!!")
 	except:
 		  st.error("No Movie Found !!!") 
 
