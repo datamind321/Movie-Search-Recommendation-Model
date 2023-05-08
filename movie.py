@@ -26,7 +26,8 @@ print(data)
 m = data.json()
 movie = m['results'] 
 	# print(movie)
-stars = star_cast(movie[0]['id'])
+cast_id = movie[0]['id']
+stars = star_cast(cast_id)
 movie_id = movie[0]['id'] 
 link_url = f"https://www.themoviedb.org/movie/{movie_id}" 
 	# print(link_url)
