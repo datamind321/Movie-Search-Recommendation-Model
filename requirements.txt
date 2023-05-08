@@ -1,2 +1,5 @@
 streamlit
 requests
+scikit-learn 
+pandas
+pickle
