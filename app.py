@@ -1,15 +1,13 @@
 import streamlit as st
 import pandas as pd
 import pickle 
-import json 
+
 from sklearn.metrics.pairwise import cosine_similarity
 import webbrowser
 import requests
 from sklearn.feature_extraction.text import CountVectorizer
-from bs4 import BeautifulSoup  
-import nltk 
-from nltk.stem.porter import PorterStemmer
-ps=PorterStemmer()  
+
+ 
 
 movies_dict = pickle.load(open('movies.pkl','rb'))
 
