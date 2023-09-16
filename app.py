@@ -30,44 +30,44 @@ base_url="https://image.tmdb.org/t/p/w500/"
 
 
 def fetch_poster(movie_id):
-	response = requests.get("https://api.themoviedb.org/3/movie/{}?api_key=150a2108231c511927660bbee0ce71b1&language=en-US".format(movie_id))
+	response = requests.get("https://api.themoviedb.org/3/movie/{}?api_key=45c587635e813dbf6f99b3d8ccfb7d32&language=en-US".format(movie_id))
 	data = response.json()  
 	# print(data)  
 	img = "https://image.tmdb.org/t/p/w500/" + data['poster_path'] 
 	return  img    
 
 def fetch_credits(movie_id):
-	response = requests.get("https://api.themoviedb.org/3/movie/{}/credits?api_key=150a2108231c511927660bbee0ce71b1&language=en-US".format(movie_id)) 
+	response = requests.get("https://api.themoviedb.org/3/movie/{}/credits?api_key=45c587635e813dbf6f99b3d8ccfb7d32&language=en-US".format(movie_id)) 
 	dr = response.json()
 	cast = dr['cast'] 
 	name = cast[0:6]
 	return name  
 
 def get_videos(movie_id):
-	response = requests.get("https://api.themoviedb.org/3/movie/{}/videos?api_key=150a2108231c511927660bbee0ce71b1&language=en-US".format(movie_id))
+	response = requests.get("https://api.themoviedb.org/3/movie/{}/videos?api_key=45c587635e813dbf6f99b3d8ccfb7d32&language=en-US".format(movie_id))
 	data = response.json()
 	vid = data['results']
 	return vid 
 
 def watch_now(movie_id):
-	response = requests.get("https://api.themoviedb.org/3/movie/{}/watch/providers?api_key=150a2108231c511927660bbee0ce71b1".format(movie_id))
+	response = requests.get("https://api.themoviedb.org/3/movie/{}/watch/providers?api_key=45c587635e813dbf6f99b3d8ccfb7d32".format(movie_id))
 	data = response.json()
 	watch = data['results'] 
 	# print(watch)
 	return watch 
 	
 def fetch_details(movie_id):
-	response = requests.get("https://api.themoviedb.org/3/movie/{}?api_key=150a2108231c511927660bbee0ce71b1&language=en-US".format(movie_id))
+	response = requests.get("https://api.themoviedb.org/3/movie/{}?api_key=45c587635e813dbf6f99b3d8ccfb7d32&language=en-US".format(movie_id))
 	return response.json()   
 
 def fetch_reviews(movie_id):
 	for i in range(0,20):
-		response=requests.get("https://api.themoviedb.org/3/movie/{}/reviews?api_key=150a2108231c511927660bbee0ce71b1&language=en-US&page=1".format(movie_id))
+		response=requests.get("https://api.themoviedb.org/3/movie/{}/reviews?api_key=45c587635e813dbf6f99b3d8ccfb7d32&language=en-US&page=1".format(movie_id))
 		data = response.json()
 		review = data['results']
 		return review
 def star_cast(movie_id):
-	response = requests.get("https://api.themoviedb.org/3/movie/{}/credits?api_key=150a2108231c511927660bbee0ce71b1&language=en-US".format(movie_id)) 
+	response = requests.get("https://api.themoviedb.org/3/movie/{}/credits?api_key=45c587635e813dbf6f99b3d8ccfb7d32&language=en-US".format(movie_id)) 
 	dr = response.json()
 	cast = dr['cast']   
 
@@ -115,8 +115,8 @@ if choices=='Search':
 
 	title = st.text_input("Type and Hit Enter....") 
 
-	url = f"https://api.themoviedb.org/3/search/movie?api_key=150a2108231c511927660bbee0ce71b1&query={title}" 
-	url2 = f"https://api.themoviedb.org/3/search/movie?api_key=150a2108231c511927660bbee0ce71b1&query=append_to_response=videos"
+	url = f"https://api.themoviedb.org/3/search/movie?api_key=45c587635e813dbf6f99b3d8ccfb7d32&query={title}" 
+	url2 = f"https://api.themoviedb.org/3/search/movie?api_key=45c587635e813dbf6f99b3d8ccfb7d32&query=append_to_response=videos"
 	video=requests.get(url2)
 	file=video.json()
 
